@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <RootNamespace>On4Net.Extensions.Tests</RootNamespace>
+    <AssemblyName>On4Net.Extensions.Tests</AssemblyName>
+    <Description>Automated unit tests for On4Net.Extensions libraries. All documentation in this project is English-only.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="Moq" Version="4.20.72" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\On4Net.Extensions.Common\On4Net.Extensions.Common.csproj" />
+    <ProjectReference Include="..\On4Net.Extensions.Data\On4Net.Extensions.Data.csproj" />
+    <ProjectReference Include="..\On4Net.Extensions.Exception\On4Net.Extensions.Exception.csproj" />
+    <ProjectReference Include="..\On4Net.Extensions.Identity.Firebase\On4Net.Extensions.Identity.Firebase.csproj" />
+  </ItemGroup>
+
+</Project>
