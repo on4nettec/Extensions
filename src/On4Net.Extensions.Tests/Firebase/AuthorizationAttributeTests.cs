@@ -13,8 +13,9 @@ public sealed class AuthorizationAttributeTests
     {
         var attr = new AuthorizationAttribute("Admin", "Support");
         Assert.Equal(typeof(AuthorizationFilter), attr.ImplementationType);
-        Assert.Single(attr.Arguments);
-        var policies = Assert.IsType<string[]>(attr.Arguments[0]);
+        var args = attr.Arguments ?? Array.Empty<object?>();
+        Assert.Single(args);
+        var policies = Assert.IsType<string[]>(args[0]!);
         Assert.Equal(new[] { "Admin", "Support" }, policies);
     }
 }

@@ -8,6 +8,7 @@
     <RootNamespace>On4Net.Extensions.Tests</RootNamespace>
     <AssemblyName>On4Net.Extensions.Tests</AssemblyName>
     <Description>Automated unit tests for On4Net.Extensions libraries. All documentation in this project is English-only.</Description>
+    <NoWarn>$(NoWarn);NU1510</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,6 +23,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <!-- Used by `ConfigurationBuilder.AddJsonStream` in tests (NU1510 suppressed in PropertyGroup). -->
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.0" />
   </ItemGroup>
 

@@ -29,6 +29,31 @@ public sealed class RegExExtensionTests
     }
 
     [Fact]
+    public void IsMatch_Decimal_accepts_signed_decimal_string()
+    {
+        Assert.True("12.5".IsMatch_Decimal());
+    }
+
+    [Fact]
+    public void IsMatch_Time12_and_Time24_return_boolean_without_throwing()
+    {
+        Assert.False("99:99".IsMatch_Time12());
+        Assert.False("25:00".IsMatch_Time24());
+    }
+
+    [Fact]
+    public void IsMatch_TimeDuration_accepts_duration_like_token()
+    {
+        Assert.True("1:02:03".IsMatch_TimeDuration());
+    }
+
+    [Fact]
+    public void IsMatch_WebAddress_accepts_http_url()
+    {
+        Assert.True("http://example.com".IsMatch_WebAddress());
+    }
+
+    [Fact]
     public void IsMatch_Password_requires_mixed_case_and_digit()
     {
         Assert.True("Aa1xxxx".IsMatch_Password());

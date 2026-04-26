@@ -10,8 +10,8 @@
 		<Company>On4Net</Company>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<NoWarn>1591</NoWarn>
-		<Version>8.0.9</Version>
-		<PackageVersion>8.0.9</PackageVersion>
+		<Version>10.0.2</Version>
+		<PackageVersion>10.0.2</PackageVersion>
 		<Title>Extensions Exception Manager</Title>
 		<PackageIcon>icon.png</PackageIcon>
 		<PackageProjectUrl>https://github.com/On4Net/Extensions.Data</PackageProjectUrl>

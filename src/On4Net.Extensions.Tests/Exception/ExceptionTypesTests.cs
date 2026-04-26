@@ -1,5 +1,6 @@
 using Xunit;
 using AppArgException = On4Net.Extensions.Exception.ArgumentException;
+using AppApplicationException = On4Net.Extensions.Exception.ApplicationException;
 
 namespace On4Net.Extensions.Tests.Exception;
 
@@ -46,5 +47,16 @@ public sealed class ExceptionTypesTests
         var ex = new AppArgException("nope", 403);
         Assert.Equal("Argument", ex.MessageId);
         Assert.Equal(403, ex.StatusCode);
+    }
+
+    [Fact]
+    public void ApplicationException_matches_AppException_constructor_contract()
+    {
+        var ex = new AppApplicationException("App.Error", "Something failed", 422, new object[] { "x" });
+        Assert.Equal("App.Error", ex.MessageId);
+        Assert.Equal("Something failed", ex.Message);
+        Assert.Equal(422, ex.StatusCode);
+        Assert.Single(ex.Params!);
+        Assert.Equal("x", ex.Params![0]);
     }
 }

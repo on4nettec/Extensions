@@ -26,6 +26,7 @@ Abstract base for application errors.
 | `ConcurrencyException` | `ConcurrencyException.cs` | `Concurrency` message id, default **409**. |
 | `DataValidationException` | `DataValidationException.cs` | `Validation` message id, default **400**. |
 | `ArgumentException` | `ArgumentException.cs` | **Note:** this is `On4Net.Extensions.Exception.ArgumentException`, not `System.ArgumentException`. Message id `Argument`, default **403**. |
+| `ApplicationException` | `ApplicationException.cs` | Concrete `AppException` for **unforeseen** or unexpected application/domain errors you still want to return through the same contract (`MessageId`, HTTP `StatusCode`, optional `Params`) instead of a bare `System.Exception`. Same constructor as `AppException` (`messageId`, `message`, `statusCode`, `params`). **Note:** type name is `On4Net.Extensions.Exception.ApplicationException`, not `System.ApplicationException`. |
 
 ---
 
@@ -57,6 +58,7 @@ Use from global exception middleware or a central filter to return uniform JSON 
 ```
 On4Net.Extensions.Exception/
 ├── AppException.cs
+├── ApplicationException.cs
 ├── ArgumentException.cs
 ├── ConcurrencyException.cs
 ├── DataValidationException.cs

@@ -34,3 +34,5 @@ dotnet test On4Net.Extensions.Tests/On4Net.Extensions.Tests.csproj --collect:"XP
 
 - **DataSchemaMigrator** / hosted migration and live Dapper queries are not covered here; add integration tests against PostgreSQL if you need end-to-end migration and repository SQL verification.
 - **ExceptionHandler** tests assert the **current** mapping behaviour (including interaction between the `AppException` branch and the `switch` on concrete types).
+- **ObjectExtension.DecompressMemoryStream** is covered with an assertion that the returned stream is disposed when the method returns (documents current disposal behaviour).
+- Internal helpers (for example `ExecutionMethods` query helpers) are exercised indirectly through subclasses where possible; prefer integration tests for full Dapper SQL paths.

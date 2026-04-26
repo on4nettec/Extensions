@@ -116,9 +116,10 @@ public sealed class StringExtensionTests
     [Fact]
     public void Culture_helpers_throw_on_null()
     {
-        Assert.Throws<ArgumentNullException>(() => ((string)null)!.IsRtl());
-        Assert.Throws<ArgumentNullException>(() => ((string)null)!.GetDirection());
-        Assert.Throws<ArgumentNullException>(() => ((string)null)!.GetLanguageCulture());
-        Assert.Throws<ArgumentNullException>(() => ((string)null)!.GetCountryCulture());
+        string? n = null;
+        Assert.Throws<ArgumentNullException>(() => n!.IsRtl());
+        Assert.Throws<ArgumentNullException>(() => n!.GetDirection());
+        Assert.Throws<ArgumentNullException>(() => n!.GetLanguageCulture());
+        Assert.Throws<ArgumentNullException>(() => n!.GetCountryCulture());
     }
 }

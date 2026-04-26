@@ -147,7 +147,15 @@ public sealed class ObjectExtensionTests
     public void CreateInstance_generic_creates_new_instance()
     {
         object? receiver = null;
-        var instance = receiver.CreateInstance<object>();
+        var instance = receiver!.CreateInstance<object>();
         Assert.NotNull(instance);
+    }
+
+    [Fact]
+    public void CreateInstance_string_resolves_assembly_qualified_name()
+    {
+        var typeName = typeof(StringBuilder).AssemblyQualifiedName!;
+        var instance = typeName.CreateInstance();
+        Assert.IsType<StringBuilder>(instance);
     }
 }
