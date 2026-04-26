@@ -20,6 +20,7 @@ A set of **.NET** libraries for On4Net products: a PostgreSQL + Dapper data laye
 | `Extensions/src/On4Net.Extensions.Exception/` | Domain exceptions and mapping to `ErrorResponse` |
 | `Extensions/src/On4Net.Extensions.Data/` | Dapper, transactions, outbox, DbUp, base repository |
 | `Extensions/src/On4Net.Extensions.Identity.Firebase/` | Firebase JWT, Identity Toolkit, role filter |
+| `Extensions/src/On4Net.Extensions.Tests/` | xUnit tests (English docs under `README.md` in that folder) |
 
 High-level dependency graph:
 
@@ -47,7 +48,7 @@ Namespace: `On4Net.Extensions.Common`. GZip compression, Newtonsoft serializatio
 
 ### On4Net.Extensions.Exception
 
-Namespace: `On4Net.Extensions.Exception`. Base type `AppException`, types such as `NotFoundException` and `DataValidationException`, the `ErrorResponse` DTO, and the `GetErrorFromException` extension for uniform JSON errors from middleware or a global filter.
+Namespace: `On4Net.Extensions.Exception`. Base type `AppException`, types such as `NotFoundException` and `DataValidationException`, concrete `ApplicationException` for **unforeseen** application errors (same constructor contract as `AppException`), the `ErrorResponse` DTO, and the `GetErrorFromException` extension for uniform JSON errors from middleware or a global filter.
 
 **Detailed docs:** [`src/On4Net.Extensions.Exception/README.md`](src/On4Net.Extensions.Exception/README.md)
 
@@ -84,6 +85,18 @@ To pack a single project (Data example):
 ```bash
 dotnet pack On4Net.Extensions.Data/On4Net.Extensions.Data.csproj -c Release
 ```
+
+---
+
+## Testing
+
+From `Extensions/src`:
+
+```bash
+dotnet test On4Net.Extensions.Tests/On4Net.Extensions.Tests.csproj -c Release
+```
+
+The test project targets **.NET 10**, references **xUnit** and **Moq**, and uses **`Microsoft.AspNetCore.App`** for ASP.NET filter tests. See `Extensions/src/On4Net.Extensions.Tests/README.md` for layout and scope (unit tests only; no PostgreSQL required for the default run).
 
 ---
 
