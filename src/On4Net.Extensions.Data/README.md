@@ -151,8 +151,12 @@ Inherits `ExecutionMethods`. Inject via `IOutboxTransactionManager` + `Func<Date
 | `BaseLocalizationEntity` | `Model/Entity/BaseLocalizationEntity.cs` | `LocaliztionId` (spelling in code), `Culture`. |
 | `BaseTitleLocalizationEntity` | `Model/Entity/BaseTitleLocalizationEntity.cs` | Adds `Title`. |
 | `SortDirection`, `BaseSaerchRequest` | `Model/Request/BaseSaerchRequest.cs` | Search key, culture, paging, sort dictionary. |
-| `BaseLocalization` | `Model/Response/BaseLocalization.cs` | DTO: `Id`, `Culture`. |
-| `BaseTitleLocalization` | `Model/Response/BaseTitleLocalization.cs` | Adds `Title`. |
+| `BaseLocalization` (request) | `Model/Request/BaseLocalization.cs` | Namespace `Model.Request`. Abstract inbound row: `Id`, `Culture`, optional `Version`. |
+| `BaseTitleLocalization` (request) | `Model/Request/BaseTitleLocalization.cs` | Namespace `Model.Request`. Extends request `BaseLocalization`; adds `Title`. |
+| `BaseLocalizationRequest<T>` | `Model/Request/BaseLocalizationRequest.cs` | `Localization` is `IEnumerable<T>` where `T : BaseLocalization, new()`. |
+| `BaseTitleLocalizationRequest` | `Model/Request/BaseTitleLocalizationRequest.cs` | Concrete `BaseLocalizationRequest<BaseTitleLocalization>` for title+culture payloads. |
+| `BaseLocalization` (response) | `Model/Response/BaseLocalization.cs` | Namespace `Model.Response`. DTO: `Id`, `Culture`. |
+| `BaseTitleLocalization` (response) | `Model/Response/BaseTitleLocalization.cs` | Extends response `BaseLocalization`; adds `Title`. |
 | `BaseLocalizationResponse<T>` | `Model/Response/BaseLocalizationResponse.cs` | `IEnumerable<T> Localization`. |
 | `BaseTitleLocalizationResponse` | `Model/Response/BaseTitleLocalizationResponse.cs` | Concrete response for title localizations. |
 

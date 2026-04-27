@@ -26,7 +26,7 @@ dotnet test On4Net.Extensions.Tests/On4Net.Extensions.Tests.csproj --collect:"XP
 | Folder | Scope |
 |--------|--------|
 | `Common/` | Extension helpers, `Culture`, regex helpers |
-| `Data/` | `DataOptions`, `RepositoryExtensions`, `BaseRepository` sort helpers, DTOs |
+| `Data/` | `DataOptions`, `RepositoryExtensions`, `BaseRepository` sort helpers, DTOs, `Model.Request` localization types (`RequestLocalizationModelTests`) |
 | `Exception/` | `ExceptionHandler`, exception constructors |
 | `Firebase/` | `FirebaseOptions`, `FirebaseServices` HTTP behaviour, `AuthorizationFilter`, models |
 

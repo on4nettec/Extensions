@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<ImplicitUsings>enable</ImplicitUsings>
@@ -10,8 +10,8 @@
 		<Company>On4Net</Company>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<NoWarn>1591</NoWarn>
-		<Version>10.0.2</Version>
-		<PackageVersion>10.0.2</PackageVersion>
+		<Version>10.0.3</Version>
+		<PackageVersion>10.0.3</PackageVersion>
 		<Title>Extensions Data</Title>
 		<PackageIcon>icon.png</PackageIcon>
 		<PackageProjectUrl>https://github.com/On4Net/Extensions.Data</PackageProjectUrl>

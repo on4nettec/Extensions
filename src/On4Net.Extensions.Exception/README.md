@@ -4,6 +4,21 @@ Domain-specific exceptions and an extension to map any `System.Exception` to a c
 
 ---
 
+## Related — `On4Net.Extensions.Data` request models
+
+When an API uses **On4Net.Extensions.Exception** for error bodies (`ErrorResponse`) and **On4Net.Extensions.Data** for localized create/update payloads, the request-side types below live in the Data package (namespace `On4Net.Extensions.Data.Model.Request`):
+
+| Type | File | Role |
+|------|------|------|
+| `BaseLocalization` | `Model/Request/BaseLocalization.cs` | Abstract: `Id`, `Culture`, optional `Version`. |
+| `BaseTitleLocalization` | `Model/Request/BaseTitleLocalization.cs` | Adds `Title` to request `BaseLocalization`. |
+| `BaseLocalizationRequest<T>` | `Model/Request/BaseLocalizationRequest.cs` | Wrapper: `IEnumerable<T> Localization` with `T : BaseLocalization, new()`. |
+| `BaseTitleLocalizationRequest` | `Model/Request/BaseTitleLocalizationRequest.cs` | `BaseLocalizationRequest<BaseTitleLocalization>` for title localizations. |
+
+Full data-layer documentation (transactions, repository, response DTOs, etc.): [`../On4Net.Extensions.Data/README.md`](../On4Net.Extensions.Data/README.md).
+
+---
+
 ## `AppException` — `AppException.cs`
 
 Abstract base for application errors.
